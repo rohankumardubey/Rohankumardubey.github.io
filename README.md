@@ -35,6 +35,16 @@ python3 scripts/refresh-github-widgets.py
 
 The scheduled workflow becomes active after it is pushed to `main`. It can also be run from the repository's Actions tab. Branch protection rules must permit the bot's asset commits for automatic updates to reach the site.
 
+## Asset caching
+
+Before committing stylesheet, JavaScript, or favicon changes, run:
+
+```sh
+python3 scripts/version-assets.py
+```
+
+This puts content hashes in their URLs so a returning visitor loads the matching assets instead of combining new HTML with cached styles or scripts. GitHub Pages otherwise caches these files for up to ten minutes.
+
 ## GitHub Pages
 
 In repository **Settings → Pages**, choose **Deploy from a branch**, select `main`, and select the root folder. The site is served from https://rohankumardubey.github.io/.
