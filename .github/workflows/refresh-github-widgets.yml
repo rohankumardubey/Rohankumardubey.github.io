@@ -1,0 +1,46 @@
+name: Refresh GitHub widgets
+
+on:
+  schedule:
+    - cron: "23 2 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scripts/refresh-github-widgets.py
+      - .github/workflows/refresh-github-widgets.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-widgets
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - name: Refresh cards while keeping the last good SVGs
+        id: refresh
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/refresh-github-widgets.py
+      - name: Commit updated cards
+        run: |
+          git add assets/github/*.svg
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Refresh GitHub profile widgets'
+          git push
+      - name: Report any refresh failures
+        if: steps.refresh.outcome == 'failure'
+        run: |
+          echo 'Some cards could not refresh. Existing images were preserved; see refresh logs.'
+          exit 1

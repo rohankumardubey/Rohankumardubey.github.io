@@ -1,17 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
-  <title>Rohan Kumar Dubey</title>
-  <rect width="128" height="128" rx="28" fill="#111111" />
-  <circle cx="94" cy="34" r="12" fill="#c56a2d" />
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 128 128"
+  role="img"
+  aria-labelledby="title"
+>
+  <title id="title">Rohan Dubey</title>
+  <rect width="128" height="128" rx="24" fill="#111614" />
   <text
-    x="50%"
-    y="57%"
-    text-anchor="middle"
-    dominant-baseline="middle"
-    font-family="Manrope, Arial, sans-serif"
-    font-size="44"
-    font-weight="800"
-    fill="#f7f2e9"
+    x="17"
+    y="86"
+    font-family="Georgia,serif"
+    font-size="76"
+    letter-spacing="-6"
+    fill="#F0EEE6"
   >
-    RKD
+    rd
+    <tspan fill="#CBB58C">.</tspan>
   </text>
 </svg>
