@@ -9,7 +9,7 @@
         aria-labelledby="descId"
       >
         <title id="titleId">Rohan Dubey&#39;s GitHub Stats, Rank: A-</title>
-        <desc id="descId">Total Stars Earned: 56, Total Commits  : 1051, Total PRs: 308, Total Issues: 23, Contributed to (last year): 11</desc>
+        <desc id="descId">Total Stars Earned: 56, Total Commits  : 1055, Total PRs: 308, Total Issues: 23, Contributed to (last year): 11</desc>
         <style>
           .header {
             font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
@@ -73,7 +73,7 @@
         stroke-dashoffset: 251.32741228718345;
       }
       to {
-        stroke-dashoffset: 84.05712092301859;
+        stroke-dashoffset: 83.96714658082674;
       }
     }
   
